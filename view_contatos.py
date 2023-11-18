@@ -1,4 +1,3 @@
-#view_contatos
 import Controle_contatos as control
 
 sistema = control.CONTROLE_DE_DADOS()

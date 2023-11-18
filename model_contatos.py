@@ -1,4 +1,3 @@
-#model_contatos
 import psycopg2 as psy
 
 #class para gerenciar o banco de dados.

@@ -1,4 +1,3 @@
-#controle_contatos
 import model_contatos as model
 
 sistema=model.CONTROLE_BANCO()
