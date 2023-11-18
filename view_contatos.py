@@ -51,7 +51,7 @@ class GerenciadorContatosCLI:
         
         contatos= sistema.contatos
         for contato in contatos:
-            print(f"{contato['nome']} - {contato['numero']} - {contato['id']}")
+            print(f"\n{contato['nome']} - {contato['numero']} - {contato['id']}")
     
     # Método para adicionar novos contatos
     def adicionar_contatos(self):
@@ -85,16 +85,18 @@ class GerenciadorContatosCLI:
         novo_numero = input("Novo número (pressione Enter para manter o mesmo): ")
         novo_email = input("Novo email (pressione Enter para manter o mesmo): ")
         
-        if novo_nome:
-            encontrado["nome"] = novo_nome
-        if novo_numero:
-            encontrado["numero"] = novo_numero
-        if novo_email:
-            encontrado["email"] = novo_email
+        
 
         confirmacao = input("Deseja realmente salvar as alterações? (S para Sim, qualquer outra coisa para não): ")
 
         if confirmacao.upper() == "S":
+            if novo_nome:
+                encontrado["nome"] = novo_nome
+            if novo_numero:
+                encontrado["numero"] = novo_numero
+            if novo_email:
+                encontrado["email"] = novo_email
+            
             print(encontrado["nome"], encontrado["numero"], encontrado["email"])
             modficando=sistema.Modificar_contato(encontrado["nome"], encontrado["numero"], encontrado["email"], encontrado["id"])
             if modficando == True:

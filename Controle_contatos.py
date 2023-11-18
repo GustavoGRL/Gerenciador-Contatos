@@ -5,8 +5,8 @@ sistema=model.CONTROLE_BANCO()
 
 class CONTROLE_DE_DADOS:
     def __init__(self):
-        self.sistema = sistema
 
+        self.sistema=sistema
         # Carregar os contatos do banco
         carregar_contatos = sistema.Carrregar_contatos()
         self.contatos = []
@@ -65,6 +65,7 @@ class CONTROLE_DE_DADOS:
         
         #adicionando o contato.
         self.sistema.Adicionar_contato(nome, numero, email)
+        self.__init__()
         return "Contato adicionado com sucesso!"
     
     def Modificar_contato(self, nome, numero, email, id):
@@ -84,6 +85,7 @@ class CONTROLE_DE_DADOS:
             return "Erro, Email invalido"
         
         self.sistema.Modificar_contato(nome, numero, email, id)
+        self.__init__()
         return True
     
     #função para fazer a busca binaria.
@@ -127,6 +129,7 @@ class CONTROLE_DE_DADOS:
             return False
         
         sistema.Excluir_grupo(grupo_id)
+        self.__init__()
         return True
     
     def Ver_contatos_grupo(self, grupo_id):
