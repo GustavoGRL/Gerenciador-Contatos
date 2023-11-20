@@ -137,18 +137,16 @@ class CONTROLE_DE_DADOS:
         try:
             grupo_id=int(grupo_id)
         except ValueError:
-            return False
+            return False, None
         
         #verificandos se o existe o grupo com este id.
         validando_id=self.busca_binaria(self.grupos, grupo_id)
         
+        
         if validando_id == -1:
-            return False
+            return False, None
             
-        if validando_id:
-            return sistema.Carregar_contatos_grupo(grupo_id), self.grupos[validando_id]["id"]
-        else:
-            return False
+        return sistema.Carregar_contatos_grupo(grupo_id), self.grupos[validando_id]["nome"]
     
 
         

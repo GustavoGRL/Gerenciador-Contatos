@@ -113,3 +113,4 @@ class CONTROLE_BANCO:
     def __del__(self):
         self.cursor.close()
         self.connect.close()
+      
