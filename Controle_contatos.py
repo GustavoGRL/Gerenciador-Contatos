@@ -54,14 +54,13 @@ class CONTROLE_DE_DADOS:
         except ValueError:
             return "Erro, numero invalido"
         
-        if numero < 100000000:
+        if numero < 10000000 or numero > 99999999:
             return "Erro, numero invalido"
         
         #validando o email.
-        if "@" in email or ".com" in email:
-            None
-        else:
+        if not "@" in email or not ".com" in email:
             return "Erro, Email invalido"
+            
         
         #adicionando o contato.
         self.sistema.Adicionar_contato(nome, numero, email)
@@ -75,13 +74,11 @@ class CONTROLE_DE_DADOS:
         except ValueError:
             return "Erro, numero invalido"
         
-        if numero < 100000000:
+        if numero < 10000000 or numero > 99999999:
             return "Erro, numero invalido"
         
         #validando o email.
-        if "@" in email or ".com" in email:
-            None
-        else:
+        if not "@" in email or not ".com" in email:
             return "Erro, Email invalido"
         
         self.sistema.Modificar_contato(nome, numero, email, id)
