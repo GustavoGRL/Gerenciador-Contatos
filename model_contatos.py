@@ -3,7 +3,7 @@ import psycopg2 as psy
 #class para gerenciar o banco de dados.
 class CONTROLE_BANCO:
     def __init__(self):
-        self.connect = psy.connect(dbname="contatos", user="postgres", password="a12955")
+        self.connect = psy.connect(dbname="Nome do banco", user="postgres", password="senha do banco")
         self.cursor= self.connect.cursor()
         
     #função para adicionar um novo contato a tabela.
